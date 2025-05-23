@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sorry Ayushi 💖</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: url('bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            color: #4a1a2a;
+            /* subtle dark overlay */
+            position: relative;
+        }
+
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(8px);
+                z-index: 0;
+            }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 50px 30px;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ff3366;
+            margin-bottom: 20px;
+            animation: slideDown 1s ease-out;
+        }
+
+        .image-box img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            animation: zoomIn 2s ease;
+        }
+
+        .message {
+            font-size: 1.3em;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in;
+            color: #4a1a2a;
+            font-weight: 600;
+        }
+
+        .shayari {
+            font-size: 1.2em;
+            margin-top: 30px;
+            font-style: italic;
+            animation: fadeIn 3s ease-in-out;
+            color: #660033;
+            line-height: 1.5em;
+        }
+
+        .heart {
+            font-size: 3em;
+            color: #ff1a1a;
+            animation: heartbeat 1.5s infinite;
+            margin-top: 30px;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 12px 25px;
+            font-size: 18px;
+            border-radius: 12px;
+            background-color: #ff6699;
+            border: none;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(255,102,153,0.6);
+            transition: background-color 0.3s ease;
+        }
+
+            button:hover {
+                background-color: #ff3366;
+            }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>I'm Sorry Ayushi 💖</h1>
+
+        <div class="image-box">
+            <!-- Replace this with your Ayushi pic name or URL -->
+            <img src="ayushi.jpeg" alt="Ayushi Picture" />
+        </div>
+
+        <div class="message">
+            Main kabhi perfect nahi tha... lekin <b>tumhare liye sab kuch banne ki koshish</b> ki hai.<br>
+            Galti ho gayi... par tumhari kami har pal mehsoos hoti hai... 🥺
+        </div>
+
+        <div class="shayari">
+            "Tere bina adhura hoon main,<br>
+            Tere saath poora lagta hoon,<br>
+            Tu roothi toh sab kuch suna ho gaya,<br>
+            Bas ek baar keh de, ke tu mera hai phir se..." 🌸
+        </div>
+
+        <div class="shayari" style="margin-top: 20px;">
+            "Main galtiyon se bhara hoon,<br>
+            Par dil se toh tera hi yaar hoon...<br>
+            Bas ek baar keh de — 'I forgive you'..." 😔
+        </div>
+
+        <div class="heart">❤️</div>
+
+        <button onclick="toggleMusic()">
+            ▶️ Play / Pause Song
+        </button>
+    </div>
+
+    <!-- Audio player hidden -->
+    <audio id="bgMusic" loop>
+        <source src="tera_yaar.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const bgMusic = document.getElementById('bgMusic');
+        function toggleMusic() {
+            if (bgMusic.paused) {
+                bgMusic.play();
+            } else {
+                bgMusic.pause();
+            }
+        }
+        // Optionally autoplay on load with user interaction requirement in mind
+        // bgMusic.play();
+    </script>
+
+</body>
+</html>
